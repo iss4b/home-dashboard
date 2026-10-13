@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1024, initial-scale=1">
+<title>Home Dashboard — Court-Saint-Etienne</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="top-left">
+    <div id="date-line" class="date-line">—</div>
+    <div id="greeting" class="greeting">Bonjour</div>
+  </div>
+  <div class="top-center">
+    <div id="clock" class="clock">--:--:--</div>
+  </div>
+  <div class="top-right">
+    <div id="header-weather" class="header-weather">Court-Saint-Etienne — …</div>
+    <div class="top-actions">
+      <span id="offline-badge" class="badge offline hidden">hors ligne</span>
+      <button id="theme-btn" class="icon-btn" title="Basculer clair/sombre" aria-label="Thème">◐</button>
+    </div>
+  </div>
+</header>
+
+<main class="grid">
+  <!-- METEO -->
+  <section class="card" id="card-weather">
+    <h2><span class="dot blue"></span>Météo · Court-Saint-Etienne</h2>
+    <div id="weather-now" class="weather-now">
+      <div class="w-temp">—</div>
+      <div class="w-desc">Chargement…</div>
+    </div>
+    <div id="weather-meta" class="weather-meta"></div>
+    <div class="sub-title">Prochaines heures</div>
+    <div id="weather-hourly" class="hourly"></div>
+    <div class="sub-title">7 jours</div>
+    <div id="weather-daily" class="daily"></div>
+    <div class="foot-note">Open-Meteo · màj <span id="weather-updated">—</span></div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="card" id="card-news">
+    <h2><span class="dot green"></span>Actualités
+      <span class="tabs">
+        <button class="tab active" data-tab="be">Belgique</button>
+        <button class="tab" data-tab="world">Monde</button>
+      </span>
+    </h2>
+    <div id="news-list" class="news-list"><div class="loading">Chargement des actualités…</div></div>
+    <div class="foot-note">RTBF · Google News BE · BBC · Le Monde · màj <span id="news-updated">—</span></div>
+  </section>
+
+  <!-- ARSENAL -->
+  <section class="card arsenal" id="card-arsenal">
+    <h2><span class="dot red"></span>Arsenal <span class="arsenal-badge">GUNNERS</span></h2>
+    <div id="arsenal-next" class="arsenal-next"><div class="loading">Chargement calendrier…</div></div>
+    <div class="sub-title">Prochains matchs</div>
+    <div id="arsenal-upcoming" class="match-list"></div>
+    <div class="sub-title">Derniers résultats</div>
+    <div id="arsenal-results" class="match-list"></div>
+    <div class="foot-note">Toutes compétitions (TheSportsDB + OpenFootball) · màj <span id="arsenal-updated">—</span></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
